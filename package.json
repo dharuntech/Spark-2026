@@ -1,0 +1,54 @@
+{
+  "name": "spark26",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spark'26 CSE Symposium - registration, QR pass, attendance & Excel export platform",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "node prisma/seed.js",
+    "db:studio": "prisma studio",
+    "admin:create": "node scripts/create-admin.js",
+    "test": "node scripts/run-tests.js",
+    "check": "node scripts/check.js",
+    "test:e2e": "node scripts/e2e-browser.js",
+    "test:camera": "node scripts/e2e-camera-scan.js",
+    "test:db": "node scripts/test-db-prepare.js",
+    "data:reset": "node scripts/reset-dev-data.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.22.3",
+    "express-rate-limit": "^8.7.1",
+    "express-session": "^1.19.0",
+    "file-type": "^16.5.4",
+    "helmet": "^8.3.0",
+    "html5-qrcode": "^2.3.8",
+    "multer": "^1.4.4",
+    "qrcode": "^1.5.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "jsqr": "^1.4.0",
+    "pngjs": "^7.0.0",
+    "prisma": "^6.19.3",
+    "puppeteer": "^24.43.1",
+    "supertest": "^7.3.1"
+  }
+}
